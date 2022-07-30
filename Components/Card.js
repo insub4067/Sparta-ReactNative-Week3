@@ -3,14 +3,15 @@ import {View,Text,Image,StyleSheet} from "react-native";
 
 //비구조 할당 방식으로 넘긴 속성 데이터를 꺼내 사용함
 export default function Card({content}) {
-    return (<View style={styles.card}>
-        <Image style={styles.cardImage} source={{uri:content.image}}/>
-        <View style={styles.cardText}>
-          <Text style={styles.cardTitle} numberOfLines={1}>{content.title}</Text>
-          <Text style={styles.cardDesc} numberOfLines={3}>{content.desc}</Text>
-          <Text style={styles.cardDate}>{content.date}</Text>
-        </View>
-      </View>)
+    return (
+    <View style={styles.card}>
+      <Image style={styles.cardImage} source={{uri:content.image}}/>
+      <View style={styles.cardText}>
+        <Text style={styles.cardTitle} numberOfLines={1}>{content.title}</Text>
+        <Text style={styles.cardDesc} numberOfLines={3}>{content.desc}</Text>
+        <Text style={styles.cardDate}>{content.date}</Text>
+      </View>
+    </View>)
 }
 
 const styles = StyleSheet.create({
