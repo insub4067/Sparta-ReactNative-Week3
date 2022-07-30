@@ -6,7 +6,7 @@ import DetailPage from './Pages/DetailPage';
 
 export default function App() {
   return (
-    <DetailPage/>
+    <MainPage/>
   );
 }
 

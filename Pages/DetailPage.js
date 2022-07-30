@@ -23,9 +23,17 @@ export default function DetailPage() {
         <ScrollView style={styles.container}>
             <Image style={styles.image} source={{uri:tip.image}}/>
             <View style={styles.textContainer}>
-                <Text style={styles.title}>{tip.title}</Text>
-                <Text style={styles.desc}>{tip.desc}</Text>
-                <TouchableOpacity style={styles.button} onPress={()=>popup()}><Text style={styles.buttonText}>팁 찜하기</Text></TouchableOpacity>
+                <Text style={styles.title}>
+                    {tip.title}
+                </Text>
+                <Text style={styles.desc}>
+                    {tip.desc}
+                </Text>
+                <TouchableOpacity style={styles.button} onPress={()=>popup()}>
+                    <Text style={styles.buttonText}>
+                        팁 찜하기
+                    </Text>
+                </TouchableOpacity>
             </View>
             
         </ScrollView>

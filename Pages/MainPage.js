@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
 
-const main = 'https://firebasestorage.googleapis.com/v0/b/sparta-image.appspot.com/o/lecture%2Fmain.png?alt=media&token=8e5eb78d-19ee-4359-9209-347d125b322c'
+const main = 'https://storage.googleapis.com/sparta-image.appspot.com/lecture/main.png'
 import data from '../data.json';
-
-export default function App() {
+import Card from '../Components/Card';
+export default function MainPage() {
   let tip = data.tip;
   let todayWeather = 10 + 17;
   let todayCondition = "흐림"
@@ -27,22 +27,15 @@ export default function App() {
         {/* 하나의 카드 영역을 나타내는 View */}
         { 
           tip.map((content,i)=>{
-            return i % 2 == 0 ? (<View style={styles.cardEven} key={i}>
-              <Image style={styles.cardImage} source={{uri:content.image}}/>
-              <View style={styles.cardText}>
-                <Text style={styles.cardTitle} numberOfLines={1}>{content.title}</Text>
-                <Text style={styles.cardDesc} numberOfLines={3}>{content.desc}</Text>
-                <Text style={styles.cardDate}>{content.date}</Text>
-              </View>
-            </View>) : (<View style={styles.cardOdd} key={i}>
-                <Image style={styles.cardImage} source={{uri:content.image}}/>
-                <View style={styles.cardText}>
-                  <Text style={styles.cardTitle} numberOfLines={1}>{content.title}</Text>
-                  <Text style={styles.cardDesc} numberOfLines={3}>{content.desc}</Text>
-                  <Text style={styles.cardDate}>{content.date}</Text>
-                </View>
-              </View>)
-            
+            // return (<View style={styles.card} key={i}>
+            //   <Image style={styles.cardImage} source={{uri:content.image}}/>
+            //   <View style={styles.cardText}>
+            //     <Text style={styles.cardTitle} numberOfLines={1}>{content.title}</Text>
+            //     <Text style={styles.cardDesc} numberOfLines={3}>{content.desc}</Text>
+            //     <Text style={styles.cardDate}>{content.date}</Text>
+            //   </View>
+            // </View>)
+            return (<Card content={content} key={i}/>)
           })
          }
         
@@ -164,23 +157,6 @@ const styles = StyleSheet.create({
     fontSize:10,
     color:"#A6A6A6",
   },
-  cardEven:{
-    flex:1,
-    flexDirection:"row",
-    margin:10,
-    backgroundColor:"#FFFED7",
-    borderRadius:20,
-    borderBottomWidth:0.5,
-    borderBottomColor:"#eee",
-    paddingBottom:10
-  },
-  cardOdd:{
-    flex:1,
-    flexDirection:"row",
-    margin:10,
-    borderBottomWidth:0.5,
-    borderBottomColor:"#eee",
-    paddingBottom:10
-  },
+
 
 });
