@@ -61,6 +61,7 @@ export default function MainPage({ navigation, route }) {
         <ScrollView style={styles.container}>
             <StatusBar style="light" />
             {/* <Text style={styles.title}>나만의 꿀팁</Text> */}
+            <TouchableOpacity style={styles.topButton} onPress={()=>{navigation.navigate('AboutPage')}}><Text style={styles.middleButtonText}>소개 페이지</Text></TouchableOpacity>
             <Text style={styles.weather}>오늘의 날씨: {todayWeather + '°C ' + todayCondition} </Text>
             <Image style={styles.mainImage} source={{ uri: main }} />
             <ScrollView style={styles.middleContainer} horizontal indicatorStyle={"white"}>
@@ -68,7 +69,7 @@ export default function MainPage({ navigation, route }) {
                 <TouchableOpacity style={styles.middleButton01} onPress={() => { category('생활') }}><Text style={styles.middleButtonText}>생활</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.middleButton02} onPress={() => { category('재테크') }}><Text style={styles.middleButtonText}>재테크</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.middleButton03} onPress={() => { category('반려견') }}><Text style={styles.middleButtonText}>반려견</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.middleButton04} onPress={() => { category('꿀팁 찜') }}><Text style={styles.middleButtonText}>꿀팁 찜</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.middleButton04} onPress={() => { navigation.navigate('LikePage') }}><Text style={styles.middleButtonText}>꿀팁 찜</Text></TouchableOpacity>
             </ScrollView>
             <View style={styles.cardContainer}>
                 {/* 하나의 카드 영역을 나타내는 View */}
@@ -119,6 +120,17 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginLeft: 10,
         height: 60
+    },
+    topButton: {
+        width: 100,
+        height: 50,
+        padding: 15,
+        backgroundColor: "#fdc453",
+        borderColor: "deeppink",
+        borderRadius: 15,
+        margin: 7,
+        marginRight: 20,
+        alignSelf: "flex-end"
     },
     middleButtonAll: {
         width: 100,
