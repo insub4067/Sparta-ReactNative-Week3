@@ -15,7 +15,6 @@ import "firebase/compat/storage";
 const firebaseConfig = {
   apiKey: "AIzaSyCjJE0ku5IywIT4X1JBekWRouaiPh8EECE",
   authDomain: "sparta-reactnative-week3.firebaseapp.com",
-  databaseURL: "https://sparta-reactnative-week3-default-rtdb.asia-southeast1.firebasedatabase.app/",
   databaseURL: "https://sparta-reactnative-week3-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "sparta-reactnative-week3",
   storageBucket: "sparta-reactnative-week3.appspot.com",
