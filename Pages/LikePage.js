@@ -19,8 +19,6 @@ export default function LikePage({navigation,route}) {
     const [cateState, setCateState] = useState([])
 
     useEffect(() => {
-        //뒤의 1000 숫자는 1초를 뜻함
-        //1초 뒤에 실행되는 코드들이 담겨 있는 함수
 
         setTip(data.tip)
         setCateState(data.tip)
