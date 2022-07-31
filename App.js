@@ -1,22 +1,21 @@
+import React from 'react';
+//이제 모든 페이지 컴포넌트들이 끼워져있는 책갈피를 메인에 둘예정이므로
+//컴포넌트를 더이상 불러오지 않아도 됩니다.
+// import MainPage from './pages/MainPage';
+// import DetailPage from './pages/DetailPage';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import MainPage from './Pages/MainPage'
-import AboutPage from './Pages/AboutPage'
-import DetailPage from './Pages/DetailPage';
-import Loading from './Components/Loading';
+
+//메인에 세팅할 네비게이션 도구들을 가져옵니다.
+import {NavigationContainer} from '@react-navigation/native';
+import StackNavigator from './Navigations/StackNavigator'
 
 export default function App() {
-  return (
-    <MainPage/>
-    // <Loading/>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  console.disableYellowBox = true;
+
+  return ( 
+  <NavigationContainer>
+    <StatusBar style="black" />
+    <StackNavigator/>
+ </NavigationContainer>);
+}

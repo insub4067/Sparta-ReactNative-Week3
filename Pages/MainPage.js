@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
-const main = 'https://storage.googleapis.com/sparta-image.appspot.com/lecture/main.png'
 import data from '../data.json';
 import Card from '../Components/Card';
 import Loading from '../Components/Loading';
+
+const main = 'https://storage.googleapis.com/sparta-image.appspot.com/lecture/main.png'
+
 export default function MainPage() {
     //useState 사용법
     //[state,setState] 에서 state는 이 컴포넌트에서 관리될 상태 데이터를 담고 있는 변수
@@ -53,6 +56,7 @@ export default function MainPage() {
           return 구문 안에서는 {슬래시 + * 방식으로 주석
         */
         <ScrollView style={styles.container}>
+            <StatusBar style='dark'/>
             <Text style={styles.title}>나만의 꿀팁</Text>
             <Text style={styles.weather}>오늘의 날씨: {todayWeather + '°C ' + todayCondition} </Text>
             <Image style={styles.mainImage} source={{ uri: main }} />
